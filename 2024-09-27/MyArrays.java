@@ -20,8 +20,16 @@ class MyArrays{
     System.out.println("Copied: " + arrayToString(testCopy));
 
 
-    System.out.println("Concatenated " + arrayToString(testArr) + " and " + arrayToString(testArr2));
+    System.out.print("Concatenated " + arrayToString(testArr) + " and " + arrayToString(testArr2) + ": ");
     System.out.println(arrayToString(concatArray(testArr, testArr2)));
+
+    System.out.println("Concatenated " + arrayToString(testArr2) + " and " + arrayToString(testArr) + ": ");
+    System.out.println(arrayToString(concatArray(testArr2, testArr)));
+
+    System.out.print("Concatenated " + arrayToString(testArr3) + " and " + arrayToString(testArr) + ": ");
+    System.out.println(arrayToString(concatArray(testArr3, testArr)));
+
+    System.out.println("Do they share memory? " + (concatArray(testArr3, testArr) == testArr3));
   }
 
  public static int[] returnCopy(int[]ary){
@@ -38,8 +46,8 @@ public static int[] concatArray(int[]ary1,int[]ary2){
     for(int i = 0; i < ary1.length; i++){
       out[i] = ary1[i];
     }
-    for(int i = ary1.length - 1; i < out.length; i++){
-      out[i] = ary2[i - ary1.length + 1];
+    for(int i = ary1.length; i < out.length; i++){
+      out[i] = ary2[i - ary1.length];
     }
 
     return out;
