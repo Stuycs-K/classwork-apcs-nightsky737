@@ -65,31 +65,69 @@ public class ArrayMethods {
     return out;
 
   }
+//3. Modify a given 2D array of integer as follows:
+//Replace all the negative values:
+//-When the row number is the same as the column number replace
+//that negative with the value 1
+//-All other negatives replace with 0
+public static void replaceNegative(int[][] vals){
+  for(int i = 0; i < vals.length; i++){
+    for(int j = 0; i < vals[i].length; j++){
+      if(vals[i][j] < 0){
+        if(i == j){
+          vals[i][j] = 1;
+        }else{
+          vals[i][j] = 0;
+        }
+      }
+      }
+    }
+  }
+
+
+//4. Make a copy of the given 2d array.
+//When testing : make sure that changing the original does NOT change the copy.
+//DO NOT use any built in methods that "copy" an array.
+//You SHOULD write a helper method for this.
+//If you don't see a good way to do that, you should stop and look at prior methods.
+public static int[][] copy(int[][] nums){
+  return null;//placeholder so it compiles
+}
 
   public static void main(String[] args){
     int[][] test = new int[][] {{}};
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{2, 2}, {5 , 7}, {1, 4}};
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{2, 4, 5, 6,2}};
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
 
-    
     test = new int[][] {{2, 4}, {}, {5, 9}};
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
 
-    test = new int[][] {{1,2,3},{4,5,6}}}; //{{1,4},{2,5},{3,6}}
+    test = new int[][] {{1,2,3},{4,5,6}}; //{{1,4},{2,5},{3,6}}
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
+
   }
 
 }
