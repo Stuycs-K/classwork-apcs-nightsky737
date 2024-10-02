@@ -72,7 +72,7 @@ public class ArrayMethods {
 //-All other negatives replace with 0
 public static void replaceNegative(int[][] vals){
   for(int i = 0; i < vals.length; i++){
-    for(int j = 0; i < vals[i].length; j++){
+    for(int j = 0; j < vals[i].length; j++){
       if(vals[i][j] < 0){
         if(i == j){
           vals[i][j] = 1;
@@ -101,7 +101,7 @@ public static int[][] copy(int[][] nums){
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
-    test = new int[][] {{2, 2}, {5 , 7}, {1, 4}};
+    test = new int[][] {{-1, 2}, {5 , -2}, {-4, 4}};
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
