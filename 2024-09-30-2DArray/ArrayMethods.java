@@ -91,38 +91,80 @@ public static void replaceNegative(int[][] vals){
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
 public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
+  int[][] arrCopy = new int[nums.length][];
+  for(int i = 0; i < nums.length; i++){
+    arrCopy[i] = returnCopy(nums[i]);
+  }
+  return arrCopy;
+}
+
+public static int[] returnCopy(int[]ary){
+  int[] newArr = new int[ary.length];
+  for(int i = 0; i < ary.length; i++){
+    newArr[i] = ary[i];
+  }
+  return newArr;
 }
 
   public static void main(String[] args){
     int[][] test = new int[][] {{}};
+    int[][] arrCopy = copy(test);
     System.out.println(arrToString(test));
+    System.out.println("Copy: " + arrToString(arrCopy));
+    if(test == arrCopy){System.out.print("Did not copy right");}
+    for(int i = 0; i < arrCopy.length; i++){
+      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+    }
     System.out.println("Sum: " + arr2DSum(test));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{-1, 2}, {5 , -2}, {-4, 4}};
+     arrCopy = copy(test);
     System.out.println(arrToString(test));
+    System.out.println("Copy: " + arrToString(arrCopy));
+    if(test == arrCopy){System.out.print("Did not copy right");}
+    for(int i = 0; i < arrCopy.length; i++){
+      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+    }
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{2, 4, 5, 6,2}};
+    arrCopy = copy(test);
     System.out.println(arrToString(test));
+    System.out.println("Copy: " + arrToString(arrCopy));
+    if(test == arrCopy){System.out.print("Did not copy right");}
+    for(int i = 0; i < arrCopy.length; i++){
+      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+    }
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{2, 4}, {}, {5, 9}};
+   arrCopy = copy(test);
     System.out.println(arrToString(test));
+    System.out.println("Copy: " + arrToString(arrCopy));
+    if(test == arrCopy){System.out.print("Did not copy right");}
+    for(int i = 0; i < arrCopy.length; i++){
+      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+    }
     System.out.println("Sum: " + arr2DSum(test));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{1,2,3},{4,5,6}}; //{{1,4},{2,5},{3,6}}
+    arrCopy = copy(test);
     System.out.println(arrToString(test));
+    System.out.println("Copy: " + arrToString(arrCopy));
+    if(test == arrCopy){System.out.print("Did not copy right");}
+    for(int i = 0; i < arrCopy.length; i++){
+      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+    }
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
