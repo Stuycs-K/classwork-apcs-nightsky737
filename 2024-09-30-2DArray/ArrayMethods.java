@@ -109,62 +109,108 @@ public static int[] returnCopy(int[]ary){
   public static void main(String[] args){
     int[][] test = new int[][] {{}};
     int[][] arrCopy = copy(test);
-    System.out.println(arrToString(test));
+
+    System.out.println("original" + arrToString(test));
     System.out.println("Copy: " + arrToString(arrCopy));
+
     if(test == arrCopy){System.out.print("Did not copy right");}
+    else
+     {System.out.println("Outer copy went okay");}
+
+     boolean innerBroke = false;
     for(int i = 0; i < arrCopy.length; i++){
-      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+      if(test[i] == arrCopy[i]){innerBroke = true;}
     }
+    if(innerBroke){System.out.println("Inner array not copied");} else {System.out.println("Inner Array copied rigth");}
+
     System.out.println("Sum: " + arr2DSum(test));
+    System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{-1, 2}, {5 , -2}, {-4, 4}};
-     arrCopy = copy(test);
-    System.out.println(arrToString(test));
+
+    arrCopy = copy(test);
+
+    System.out.println("original" + arrToString(test));
     System.out.println("Copy: " + arrToString(arrCopy));
+
     if(test == arrCopy){System.out.print("Did not copy right");}
+    else
+     {System.out.println("Outer copy went okay");}
+
+    innerBroke = false;
     for(int i = 0; i < arrCopy.length; i++){
-      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+      if(test[i] == arrCopy[i]){innerBroke = true;}
     }
+    if(innerBroke){System.out.println("Inner array not copied");} else {System.out.println("Inner Array copied rigth");}
+
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{2, 4, 5, 6,2}};
+
     arrCopy = copy(test);
-    System.out.println(arrToString(test));
+
+    System.out.println("original" + arrToString(test));
     System.out.println("Copy: " + arrToString(arrCopy));
+
     if(test == arrCopy){System.out.print("Did not copy right");}
+    else
+     {System.out.println("Outer copy went okay");}
+
+    innerBroke = false;
     for(int i = 0; i < arrCopy.length; i++){
-      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+      if(test[i] == arrCopy[i]){innerBroke = true;}
     }
+    if(innerBroke){System.out.println("Inner array not copied");} else {System.out.println("Inner Array copied rigth");}
+
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{2, 4}, {}, {5, 9}};
-   arrCopy = copy(test);
-    System.out.println(arrToString(test));
+
+    arrCopy = copy(test);
+
+    System.out.println("original" + arrToString(test));
     System.out.println("Copy: " + arrToString(arrCopy));
+
     if(test == arrCopy){System.out.print("Did not copy right");}
+    else
+     {System.out.println("Outer copy went okay");}
+
+    innerBroke = false;
     for(int i = 0; i < arrCopy.length; i++){
-      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+      if(test[i] == arrCopy[i]){innerBroke = true;}
     }
+    if(innerBroke){System.out.println("Inner array not copied");} else {System.out.println("Inner Array copied rigth");}
+
     System.out.println("Sum: " + arr2DSum(test));
+    System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
     test = new int[][] {{1,2,3},{4,5,6}}; //{{1,4},{2,5},{3,6}}
+
     arrCopy = copy(test);
-    System.out.println(arrToString(test));
+
+    System.out.println("original" + arrToString(test));
     System.out.println("Copy: " + arrToString(arrCopy));
+
     if(test == arrCopy){System.out.print("Did not copy right");}
+    else
+     {System.out.println("Outer copy went okay");}
+
+     innerBroke = false;
     for(int i = 0; i < arrCopy.length; i++){
-      if(test[i] == arrCopy[i]){System.out.print("Did not copy right");}
+      if(test[i] == arrCopy[i]){innerBroke = true;}
     }
+    if(innerBroke){System.out.println("Inner array not copied");} else {System.out.println("Inner Array copied rigth");}
+
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
