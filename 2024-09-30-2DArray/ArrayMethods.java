@@ -190,7 +190,7 @@ public static int[] returnCopy(int[]ary){
     if(innerBroke){System.out.println("Inner array not copied");} else {System.out.println("Inner Array copied rigth");}
 
     System.out.println("Sum: " + arr2DSum(test));
-    System.out.println("After rotation: " + arrToString(swapRC(test)));
+    // ragged System.out.println("After rotation: " + arrToString(swapRC(test)));
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
