@@ -6,10 +6,16 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
     int[] test1D = new int[] {5, 1, 2, 1};
-    int[][] testeD = new int[][] {{2, 4}, {1, 3}, {9,10}};
+    int[][] test2D = new int[][] {{2, 4}, {1, 3}, {9,10}};
     System.out.println(arrToString(test1D));
     System.out.println(Arrays.toString(test1D));
     System.out.println("Array ToString works: " + arrToString(test1D).equals(Arrays.toString(test1D)));
+
+    System.out.println("Test case: " + arrToString(test2D));
+
+    System.out.println("CountZeros2d: " + countZeros2D(test2D));
+    System.out.println("Sum2d: " + arr2DSum(test2D));
+
 
   }
 
