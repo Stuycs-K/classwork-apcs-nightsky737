@@ -12,6 +12,16 @@ public class ArrayDemo{
 
 
     System.out.println("Test case: " + arrToString(test2D));
+    int[][] arrCopy = copy(test2D);
+    System.out.println("Copy: " + arrToString(arrCopy));
+    if(test2D == arrCopy){System.out.print("Did not copy right");}
+    else
+     {System.out.println("Outer copy went okay");}
+    boolean innerBroke = false;
+    for(int i = 0; i < arrCopy.length; i++){
+      if(test2D[i] == arrCopy[i]){innerBroke = true;}
+    }
+    if(innerBroke){System.out.println("Inner array not copied");} else {System.out.println("Inner Array copied rigth");}
 
     System.out.println("CountZeros2d: " + countZeros2D(test2D));
     System.out.println("Sum2d: " + arr2DSum(test2D));
@@ -38,7 +48,7 @@ public class ArrayDemo{
   //The name of different methods can be the same,
   //as long as the parameters are different! (type and/or quantity must be different)
   //Pro tip: you should be using your 1D arrToString in this method!
-  public static String arrToString(int[][]nums){
+public static String arrToString(int[][]nums){
   //this should use arrToString(int[])
   String ret = new String("[");
   for (int i = 0; i < nums.length; i++) {
@@ -92,14 +102,31 @@ public class ArrayDemo{
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
   public static int[][] copy(int[][] nums){
-    return new int[1][1];
+    int[][] arrCopy = new int[nums.length][];
+    for(int i = 0; i < nums.length; i++){
+      arrCopy[i] = returnCopy(nums[i]);
+    }
+    return arrCopy;
+  }
+  
+  public static int[] returnCopy(int[]ary){
+    int[] newArr = new int[ary.length];
+    for(int i = 0; i < ary.length; i++){
+      newArr[i] = ary[i];
+    }
+    return newArr;
   }
 
   //5. Rotate an array by returning a new array with the rows and columns swapped.
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] out = new int[nums[0].length][nums.length];
+  for(int i = 0; i < nums.length; i++){
+	  for(int j = 0; j < nums[0].length; j++){
+  		out[j][i] = nums[i][j];}}
+    return out;
+
   }
 
   //6. Make an HTML table by putting a table tag around the entire 2d array,
