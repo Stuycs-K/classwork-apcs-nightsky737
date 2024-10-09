@@ -32,6 +32,8 @@ public class ArrayDemo{
     System.out.println("CountZeros2d: " + countZeros2D(test2D));
     System.out.println("Sum2d: " + arr2DSum(test2D));
 
+    System.out.println("Htmltable 1d: "+ htmlTable(test1D));
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -136,6 +138,23 @@ public static String arrToString(int[][]nums){
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+  String ret = "<table>";
+
+  for (int i = 0; i < nums.length; i++) {
+    ret += arrToString(nums[i]);
+    if (i < nums.length - 1) {
+      ret += ", ";
+    }
+  }
+  return ret + "</table>";}
+
+  public static String htmlTable(int[]nums){
+    String ret = "";
+    for (int i = 0; i < nums.length; i++) {
+      ret += "<td>";
+      ret += nums[i];
+      ret += "</td>";
+    }
+    return ret;
   }
 }
