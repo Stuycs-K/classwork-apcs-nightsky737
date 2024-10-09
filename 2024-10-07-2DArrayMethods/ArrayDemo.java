@@ -25,6 +25,7 @@ public class ArrayDemo{
 
     System.out.println("CountZeros2d: " + countZeros2D(test2D));
     System.out.println("Sum2d: " + arr2DSum(test2D));
+    System.out.println("Htmltable 2d: "+ htmlTable(test2D));
 
     test2D = new int[][] {{1, 0}, {2, 3}, {0}};
     System.out.println("Test case: " + arrToString(test2D));
@@ -32,7 +33,7 @@ public class ArrayDemo{
     System.out.println("CountZeros2d: " + countZeros2D(test2D));
     System.out.println("Sum2d: " + arr2DSum(test2D));
 
-    System.out.println("Htmltable 1d: "+ htmlTable(test1D));
+    System.out.println("Htmltable 2d: "+ htmlTable(test2D));
 
   }
 
@@ -139,12 +140,10 @@ public static String arrToString(int[][]nums){
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
   String ret = "<table>";
-
   for (int i = 0; i < nums.length; i++) {
-    ret += arrToString(nums[i]);
-    if (i < nums.length - 1) {
-      ret += ", ";
-    }
+    ret += "<tr>";
+    ret += htmlTable(nums[i]);
+    ret += "</tr>";
   }
   return ret + "</table>";}
 
