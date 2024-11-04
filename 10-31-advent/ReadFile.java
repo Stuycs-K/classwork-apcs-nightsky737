@@ -48,5 +48,6 @@ public class ReadFile {
     }
 
     System.out.println(TriangleTester.countTrianglesA("inputTri.txt"));
+    System.out.println("input b " + TriangleTester.countTrianglesB("inputTriB.txt"));
   }
 }
