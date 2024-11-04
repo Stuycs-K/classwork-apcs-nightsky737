@@ -15,10 +15,7 @@ public class TriangleTester{
       File file = new File(filename);
       Scanner triangles = new Scanner(file);
 
-      while(triangles.hasNextLine() && triangles.hasNextInt()){
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
+      while(triangles.hasNextInt()){
         a = triangles.nextInt();
         b = triangles.nextInt();
         c = triangles.nextInt();
