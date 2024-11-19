@@ -28,14 +28,14 @@ public static void main(String[] args){
 public static String day2solve(ArrayList<String> input){
   String[][] keypad = new String[][]{
     {"0","0","0","0","0","0","0","0","0",},
-    {"0","0", "0", "0", "1", "0", "0", "0"},
+    {"0","0", "0", "1", "0", "0", "0"},
     {"0","0", "2", "3", "4" , "0", "0"},
     {"0","5", "6", "7", "8", "9", "0"},
     {"0","0","A", "B", "C", "0", "0"},
-    {"0", "0", "0", "D", "0", "0", "0"}
+    {"0", "0", "0", "D", "0", "0", "0"},
     {"0","0","0","0","0","0","0","0","0",},
 };
-  int r = 1;
+  int r = 3;
   int c = 1;
   String ret = "";
   for(int i = 0; i < input.size(); i++){
@@ -45,13 +45,18 @@ public static String day2solve(ArrayList<String> input){
         c += 1;
       }else if(inStr.charAt(j) == 'U' && !keypad[r -1][c].equals("0")){
         r -= 1;
+
       }else if(inStr.charAt(j) == 'D' && !keypad[r+ 1][c].equals("0")){
         r += 1;
+
       }else if(inStr.charAt(j) == 'L' && !keypad[r][c -1].equals("0")){
         c -= 1;
+
       }
+
     }
     ret += keypad[r][c];
+
   }
 return ret;
 }
