@@ -10,7 +10,9 @@ public class day1{
     Scanner inScan = new Scanner(file);
     int direction = 0; //0 is North,
     String[] intext = inScan.nextLine().split(", ");
-    int x, y = 0;
+    System.out.println(Arrays.toString(intext));
+    int x = 0;
+    int y = 0;
     for(int i = 0; i < intext.length; i++){
       if(intext[i].charAt(0) == 'R'){
         direction += 1;
@@ -27,8 +29,7 @@ public class day1{
         x -= Integer.parseInt(intext[i].substring(1));
       }
     }
-    double distance = Math.sqrt(x * x + y * y);
-    Sytem.out.println(distance);
+    System.out.println(Math.abs(x) +Math.abs(y));
   }
     catch(FileNotFoundException e){
       System.out.println("your file bad");
