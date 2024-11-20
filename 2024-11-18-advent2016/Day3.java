@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class Day3 {
@@ -14,7 +14,7 @@ public class Day3 {
         while(inScan.hasNextLine()){
         String nextL = inScan.nextLine();
         String code = nextL.substring(nextL.length() - 10, nextL.length() - 7);
-        String checksum = nextL.substring(nextL.length() - 7);
+        String checksum = nextL.substring(nextL.length() - 6, nextL.length() - 1);
         ret.add(new String[] {nextL.substring(0, nextL.length() - 10).replace("-", ""), code, checksum});
         }
         inScan.close();
@@ -27,7 +27,16 @@ public class Day3 {
     public static void main(String[] args){
         ArrayList<String[]> input = parse("Day3.txt");
         for(int i = 0; i < input.size(); i++){
-            System.out.println(Arrays.toString(input.get(i)));
+            int[] abcs = new int[26];
+            String[] in = input.get(i);
+            for(int j = 0; j < in[0].length(); j++){
+                //insert via comaprisons and > operators so alphabetically
+                abcs[in[0].charAt(j) % 97] += 1;
+            }
+            System.out.println(Arrays.toString(abcs));
+            ArrayList<String> sorted = new ArrayList<String>();
+            for(int k = 0; k< 26; k++){
+            }
         }
     }
 }
