@@ -30,8 +30,23 @@ public class Day6{
 
   public static void main(String[] args){
       ArrayList<ArrayList<Character>> input = parse("day6in");
+      String ret = "";
       for(int i = 0; i < input.size(); i++){
-        System.out.println(input.get(i));
+        ArrayList<Character> charArr = input.get(i);
+        int[] abcsfreq = new int[26];
+        for(int j = 0 ; j < charArr.size(); j++){
+            abcsfreq[charArr.get(j) - 'a'] += 1;
+        }
+        char biggest = 'a';
+        int biggestfreq = abcsfreq[0];
+        for(int j = 1; j < 26; j++){
+          if(abcsfreq[j] < biggestfreq){
+            biggest = (char)('a' + j);
+            biggestfreq = abcsfreq[j];
+          }
+        }
+        ret += biggest;
       }
+      System.out.println(ret);
   }
 }
