@@ -48,11 +48,13 @@ public class Mage extends Adventurer{
 
             //heall or buff the target adventurer
             public String support(Adventurer other){
-              return "";
+              other.setHP(other.getmaxHP());
+              return this.getName() + " healed " + other.getName();
             }
             //heall or buff self
             public String support(){
-              return "";
+              setHP(getmaxHP());
+              return this.getName() + " healed themselves";
             }
             //hurt or hinder the target adventurer, consume some special resource
             public String specialAttack(Adventurer other){
