@@ -42,7 +42,8 @@ public class Mage extends Adventurer{
             */
             //hurt or hinder the target adventurer
             public String attack(Adventurer other){
-              return "";
+              other.applyDamage(2);
+              return this.getName() + " dealt 2 damage to " + other.getName();
             }
 
             //heall or buff the target adventurer
