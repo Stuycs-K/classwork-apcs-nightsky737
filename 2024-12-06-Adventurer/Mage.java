@@ -9,7 +9,7 @@ public class Mage extends Adventurer{
     public Mage(String name, int hp){
       super(name, hp);
       setSpecial(0);
-      specialMax = 10;
+      specialMax = 30;
     }
 
 
