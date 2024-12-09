@@ -38,7 +38,7 @@ public class Mage extends Adventurer{
            }
         }
         }
-      }
+
       public int getSpecialMax(){
         return specialMax;
       }
@@ -61,7 +61,7 @@ public class Mage extends Adventurer{
             //heall or buff self
             public String support(){
               setHP(getmaxHP());
-              setSpecial
+              setSpecial(getSpecial() + 5);
               return this.getName() + " healed themselves to full hp and restored 5 " + getSpecialName();
             }
             //hurt or hinder the target adventurer, consume some special resource
