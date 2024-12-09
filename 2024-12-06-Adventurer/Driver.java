@@ -9,6 +9,7 @@ public class Driver{
   System.out.println("has " + p1.getSpecial() + " special " + p1.getSpecialName());
   System.out.println(p1.support(p2));
   System.out.println(p1.support());
+  System.out.println(p1.specialAttack(p2));
 
   }
 }
