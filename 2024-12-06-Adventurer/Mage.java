@@ -11,6 +11,9 @@ public class Mage extends Adventurer{
       setSpecial(0);
       specialMax = 30;
     }
+    public Mage(){
+      super("Betty");
+    }
 
 
       //Abstract methods are meant to be implemented in child classes.
@@ -28,8 +31,12 @@ public class Mage extends Adventurer{
         return special;
       }
       public void setSpecial(int n){
-        if(n >= 0 && n <= getSpecialMax()){
-         special = n;
+        if(n >= 0){
+          if(n <= getSpecialMax()){
+           special = n;}else{
+             special = getSpecialMax();
+           }
+        }
         }
       }
       public int getSpecialMax(){
@@ -49,12 +56,13 @@ public class Mage extends Adventurer{
             //heall or buff the target adventurer
             public String support(Adventurer other){
               other.setHP(other.getmaxHP());
-              return this.getName() + " healed " + other.getName();
+              return this.getName() + " healed to full hp" + other.getName();
             }
             //heall or buff self
             public String support(){
               setHP(getmaxHP());
-              return this.getName() + " healed themselves";
+              setSpecial
+              return this.getName() + " healed themselves to full hp and restored 5 " + getSpecialName();
             }
             //hurt or hinder the target adventurer, consume some special resource
             public String specialAttack(Adventurer other){
