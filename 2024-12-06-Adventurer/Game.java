@@ -45,7 +45,7 @@ class Game{
         break;
       }
 
-      int enemyAction = (int) Math.random() * 3;
+      int enemyAction = (int) (Math.random() * 3);
       if(enemyAction == 0){
         System.out.println(enemy.attack(player));}
         else if(enemyAction == 1){
