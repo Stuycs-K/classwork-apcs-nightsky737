@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 class Game{
 
@@ -15,7 +16,8 @@ class Game{
     System.out.println("Username is: " + userName);
     Adventurer player = new Mage(userName);
     Adventurer enemy = new CodeWarrior();
-
+    System.out.println( "Player " + player + ": " + player.getHP() + "/" + player.getmaxHP() +  " HP, " + player.getSpecial() + "/" + player.getSpecialMax() + " " + player.getSpecialName());
+    System.out.println( "Enemy " + enemy + ": " + enemy.getHP() + "/" + enemy.getmaxHP() +  " HP, " + enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecialName());
     while(true){
       if(player.getHP() <= 0){
         System.out.println("Winner is " + enemy);
@@ -37,12 +39,22 @@ class Game{
         System.out.println("invalid action, try again");
         continue;
       }
-      System.out.println( "Player " + player + ": " + player.getHP() + "/" + player.getmaxHP() +  " HP, " + player.getSpecial() + "/" + player.getSpecialMax() + " " + player.getSpecial());
-      System.out.println( "Player " + enemy + ": " + enemy.getHP() + "/" + enemy.getmaxHP() +  " HP, " + enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecial());
+
       if(enemy.getHP() <= 0){
         System.out.println("Winner is " + player);
         break;
       }
+
+      int enemyAction = (int) Math.random() * 3;
+      if(enemyAction == 0){
+        System.out.println(enemy.attack(player));}
+        else if(enemyAction == 1){
+          System.out.println(enemy.specialAttack(player));
+        }else if (enemyAction == 2){
+          System.out.println(enemy.support());
+        }
+      System.out.println( "Player " + player + ": " + player.getHP() + "/" + player.getmaxHP() +  " HP, " + player.getSpecial() + "/" + player.getSpecialMax() + " " + player.getSpecialName());
+      System.out.println( "Enemy " + enemy + ": " + enemy.getHP() + "/" + enemy.getmaxHP() +  " HP, " + enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecialName());
 
     }
   }

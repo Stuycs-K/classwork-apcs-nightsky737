@@ -2,17 +2,15 @@ public class Mage extends Adventurer{
   private int special;
   private int specialMax;
     public Mage(String name){
-      super(name);
-      setSpecial(0);
-      specialMax = 10;
+      this(name, 10);
     }
     public Mage(String name, int hp){
       super(name, hp);
-      setSpecial(0);
       specialMax = 30;
+      setSpecial(10);
     }
     public Mage(){
-      super("Betty");
+      this("Betty");
     }
 
 
@@ -66,9 +64,15 @@ public class Mage extends Adventurer{
             }
             //hurt or hinder the target adventurer, consume some special resource
             public String specialAttack(Adventurer other){
-              setSpecial(getSpecial() - 2);
-              other.applyDamage(5);
-              return this.getName() + " used 2 " + getSpecialName() + " to deal 2 damage to " + other.getName() + "(" + getSpecial() + " " + getSpecialName() +" remaining)";}
+              if(getSpecial() >= 2){
+                setSpecial(getSpecial() - 2);
+                other.applyDamage(5);
+                return this.getName() + " used 2 " + getSpecialName() + " to deal 5 damage to " + other.getName() + "(" + getSpecial() + " " + getSpecialName() +" remaining)";}
+              else{
+                  return getName() + " did not have enough " + getSpecialName() +" and used normal attack instead." + attack(other);
+                }
+              }
+             
 
 
 }
